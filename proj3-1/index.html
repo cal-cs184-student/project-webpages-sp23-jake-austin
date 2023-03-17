@@ -26,6 +26,7 @@
 <ul>
 <li>Comparison: The BVH is much faster due to the increased efficiency. My implementation went from 30s for my laptop on the cow scene down to .03s. This is due to the fact that BVH runs in O(logn) time when it comes time to render, due to the fact that we are doing tree traversal instead of exhaustive search. This is seen in the fact that we do 3.49 intersection checks (not including bounding box intersection checks) on actual primitives compared to exhaustive search where we compare every ray with every primitive. This is a huge improvement in efficiency. All of these scenes are under one second to render out which is impressive considering I wasn&#39;t able to fully render out lucy at all before.</li>
 <li>Note: the pitfalls in this part were incredibly annoying... anything from inclusive vs exclusive inequality checks to short circuiting took away like 3 hours of my life I won&#39;t get back.</li>
+<li>Another Note: The way I implemented aabb ray collision was the algorithm used in this medium article https://medium.com/@bromanz/another-view-on-the-classic-ray-aabb-intersection-algorithm-for-bvh-traversal-41125138b525. I found this algorithm while looking for shorter ways to implement the algorithm since my first pass algorithm was 50 lines. I made sure to fully understand the algorithm before using it in my project.
 </ul>
 <h2 id="part-3">Part 3</h2>
 <ul>
